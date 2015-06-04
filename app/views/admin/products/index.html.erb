@@ -1,0 +1,39 @@
+<h1>商品列表</h1>
+
+<%= link_to '新增商品', new_admin_product_path, class:'btn btn-primary' %>
+<hr />
+<div class="row">
+  <div class="col-md-3">
+
+  <div class="list-group">
+  <a href="#" class="list-group-item active">
+    分類
+  </a>
+  <a href="#" class="list-group-item">Vestibulum at eros</a>
+  </div>
+
+  </div>
+  <div class="col-md-9">
+    <table class="table">
+      <thead>
+        <tr>
+          <td>商品名稱</td>
+          <td>售價</td>
+          <td>狀態</td>
+          <td>處理</td>
+        </tr>
+      </thead>
+      <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.price %></td>
+          <td><%= online_status(product) %></td>
+          <td><%= link_to '刪除', admin_product_path(product), method: :delete, data:{confirm:'確定嗎?'}, class:'btn btn-xs btn-danger' %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</div>
