@@ -1,0 +1,24 @@
+<h1>商品列表</h1>
+<div class="row">
+
+  <div class="col-md-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <td>商品名稱</td>
+          <td>售價</td>
+        </tr>
+      </thead>
+      <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.price %></td>
+          <td>放入購物車</td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</div>
